@@ -10,4 +10,5 @@ sudo make distclean
 sudo make
 sudo cp src/redis-server /usr/local/bin/
 sudo cp src/redis-cli /usr/local/bin/
-redis-server &
+redis-server --daemonize yes --protected-mode no --bind 0.0.0.0
+redis-cli DEBUG POPULATE 100 test 10000
